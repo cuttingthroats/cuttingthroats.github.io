@@ -52,21 +52,24 @@
         .links a {
             display: block;
             background: linear-gradient(to right, black, gray);
-            opacity: 0.3;
             color: white;
             text-decoration: none;
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
             border: 1px solid white;
+            opacity: 1;
         }
         .links a:hover {
-            opacity: 0.6;
+            background: linear-gradient(to right, gray, black);
         }
         .view-counter {
             font-size: 14px;
             color: #333;
             margin-top: 15px;
+        }
+        .audio-control {
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -75,10 +78,14 @@
         <source src="video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <audio autoplay loop>
+    
+    <audio id="background-audio" loop>
         <source src="audio.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    
+    <button class="audio-control" onclick="toggleAudio()">Play Music</button>
+    
     <div class="container">
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
         <div class="name">Marl</div>
@@ -88,11 +95,21 @@
         </div>
         <div class="view-counter">Views: <span id="counter">0</span></div>
     </div>
+    
     <script>
         let views = localStorage.getItem('page_views') || 0;
         views++;
         localStorage.setItem('page_views', views);
         document.getElementById('counter').innerText = views;
+        
+        function toggleAudio() {
+            let audio = document.getElementById("background-audio");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
     </script>
 </body>
 </html>
