@@ -51,17 +51,16 @@
         }
         .links a {
             display: block;
-            background: linear-gradient(to right, black, gray);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(128, 128, 128, 0.7));
             color: white;
             text-decoration: none;
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
             border: 1px solid white;
-            opacity: 1;
         }
         .links a:hover {
-            background: linear-gradient(to right, gray, black);
+            background: linear-gradient(to right, rgba(128, 128, 128, 0.9), rgba(0, 0, 0, 0.9));
         }
         .view-counter {
             font-size: 14px;
@@ -79,7 +78,7 @@
         Your browser does not support the video tag.
     </video>
     
-    <audio id="background-audio" loop>
+    <audio id="background-audio" autoplay loop muted>
         <source src="audio.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -104,9 +103,11 @@
         
         function toggleAudio() {
             let audio = document.getElementById("background-audio");
-            if (audio.paused) {
+            if (audio.muted) {
+                audio.muted = false;
                 audio.play();
             } else {
+                audio.muted = true;
                 audio.pause();
             }
         }
