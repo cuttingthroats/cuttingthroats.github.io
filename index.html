@@ -51,15 +51,17 @@
         }
         .links a {
             display: block;
-            background: #007bff;
+            background: linear-gradient(to right, black, gray);
+            opacity: 0.3;
             color: white;
             text-decoration: none;
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
+            border: 1px solid white;
         }
         .links a:hover {
-            background: #0056b3;
+            opacity: 0.6;
         }
         .view-counter {
             font-size: 14px;
@@ -73,12 +75,16 @@
         <source src="video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <audio autoplay loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
     <div class="container">
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
         <div class="name">Marl</div>
-        <div class="bio">hate niggas</div>
+        <div class="bio">Your personal bio here</div>
         <div class="links">
-            <a href="#" target="_blank">Discord: cuttingthroats/a>
+            <a href="#" target="_blank">Discord: cuttingthroats</a>
         </div>
         <div class="view-counter">Views: <span id="counter">0</span></div>
     </div>
