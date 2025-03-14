@@ -36,6 +36,17 @@
             position: relative;
             z-index: 1;
         }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: -1;
+        }
         .profile-pic {
             width: 100px;
             height: 100px;
@@ -110,7 +121,7 @@
     <div class="container">
         <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
         <div class="name">Marl</div>
-        <div class="bio">i hate niggers</div>
+        <div class="bio">Your personal bio here</div>
         <div class="links">
             <a href="#" target="_blank">Discord: cuttingthroats</a>
         </div>
